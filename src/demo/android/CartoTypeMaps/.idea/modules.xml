@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CartoType Maps-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CartoType Maps-app.iml" group="CartoType Maps/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cartotype/CartoType Maps-cartotype.iml" filepath="$PROJECT_DIR$/.idea/modules/cartotype/CartoType Maps-cartotype.iml" group="CartoType Maps/cartotype" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CartoTypeMaps-CartoType_Maps.iml" filepath="$PROJECT_DIR$/.idea/modules/CartoTypeMaps-CartoType_Maps.iml" group="CartoType_Maps" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CartoTypeMaps-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CartoTypeMaps-app.iml" group="CartoType Maps/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cartotype/CartoTypeMaps-cartotype.iml" filepath="$PROJECT_DIR$/.idea/modules/cartotype/CartoTypeMaps-cartotype.iml" group="CartoType Maps/cartotype" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CartoType_Maps.iml" filepath="$PROJECT_DIR$/.idea/modules/CartoType_Maps.iml" group="CartoType_Maps" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android-CartoTypeMaps-CartoType_Maps.iml" filepath="$PROJECT_DIR$/.idea/modules/android-CartoTypeMaps-CartoType_Maps.iml" group="CartoType_Maps" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android-CartoTypeMaps-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android-CartoTypeMaps-app.iml" group="CartoType Maps/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cartotype/android-CartoTypeMaps-cartotype.iml" filepath="$PROJECT_DIR$/.idea/modules/cartotype/android-CartoTypeMaps-cartotype.iml" group="CartoType Maps/cartotype" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="CartoType Maps/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cartotype/cartotype.iml" filepath="$PROJECT_DIR$/.idea/modules/cartotype/cartotype.iml" group="CartoType Maps/cartotype" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo-android-CartoTypeMaps-CartoType_Maps.iml" filepath="$PROJECT_DIR$/.idea/modules/demo-android-CartoTypeMaps-CartoType_Maps.iml" group="CartoType_Maps" />
+    </modules>
+  </component>
+</project>
