@@ -890,6 +890,9 @@ class OnCurveContour: public ContourBase<Point>
             return;
         iPoint.push_back(aPoint);
         }
+
+    void AppendPointMerging(const OutlinePoint& aPoint);
+
     /** Appends a point to the contour whether or not it differs from the previous point. */
     void AppendPoint(double aX,double aY)
         {

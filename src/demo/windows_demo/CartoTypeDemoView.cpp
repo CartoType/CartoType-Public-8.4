@@ -1448,7 +1448,10 @@ void CCartoTypeDemoView::ShowNextFoundObject()
     if (!error)
         area = object->Area(error);
     if (!error)
+        {
+        summary += ", ";
         summary += AreaOrLengthString(area,length,m_metric_units);
+        }
 
     CCartoTypeDemoApp* app = (CCartoTypeDemoApp*)AfxGetApp();
     CMainFrame* main_window = (CMainFrame*)app->m_pMainWnd;
@@ -1466,7 +1469,7 @@ void CCartoTypeDemoView::ShowNextFoundObject()
         CartoType::String s;
         CartoType::FeatureInfo f;
         error = m_framework->InsertCopyOfMapObject(0,found_layer,*object,object->Type() == CartoType::MapObjectType::Point ? 50 : 0,
-                                                   CartoType::CoordType::MapMeter,m_found_object_id,true,&s,&f);
+                                                   CartoType::CoordType::MapMeter,m_found_object_id,true);
         }
 
     if (!error)

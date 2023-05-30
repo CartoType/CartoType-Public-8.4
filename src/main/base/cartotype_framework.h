@@ -333,9 +333,9 @@ class Framework: public MNavigatorObserver
         public:
         /** The first map. Must not be empty. */
         String MapFileName;
-        /** The first style sheet. If this string is empty, the style sheet must be supplied in iStyleSheetText. */
+        /** The first style sheet. If this string is empty, the style sheet must be supplied in StyleSheetText. */
         String StyleSheetFileName;
-        /** The style sheet text; used if iStyleSheetFileName is empty. */
+        /** The style sheet text; used if StyleSheetFileName is empty. */
         std::string StyleSheetText;
         /** The first font file. If this is empty, a small built-in font is loaded containing the Roman script only. */
         String FontFileName;
@@ -356,9 +356,9 @@ class Framework: public MNavigatorObserver
         The value -1 disables text index loading.
         */
         int32_t TextIndexLevels = 0;
-        /** If non-null, use this shared engine and do not use iMapFileName or iFontFileName. */
+        /** If non-null, use this shared engine and do not use MapFileName or FontFileName. */
         std::shared_ptr<FrameworkEngine> SharedEngine;
-        /** If non-null, use this shared dataset and do not use iMapFileName or iFontFileName. */
+        /** If non-null, use this shared dataset and do not use MapFileName or FontFileName. */
         std::shared_ptr<FrameworkMapDataSet> SharedMapDataSet;
         /**
         If true, maps are allowed to overlap.
