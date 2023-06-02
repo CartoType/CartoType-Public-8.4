@@ -113,17 +113,10 @@ MapForm::MapForm(QWidget* aParent,MainWindow& aMainWindow,const std::vector<QStr
     m_framework->EnableLegend(m_draw_legend || m_draw_scale);
     m_framework->SetAnimateTransitions(true);
 
-    // Create the OpenGL map renderer.
-    m_map_renderer = CartoType::CQtMapRenderer::New(error,*m_framework);
-    if (error)
-        m_main_window.ShowError("cannot create map renderer: graphics acceleration not available",error);
-
     // Create the initial map image.
     m_map_image.reset(new QImage(rect.width(),rect.height(),QImage::Format_ARGB32_Premultiplied));
 
     m_ui->perspective_slider->hide();
-    
-    SetGraphicsAcceleration(m_map_renderer != nullptr);
     }
 
 void MapForm::ScreenChanged()
@@ -460,11 +453,17 @@ void MapForm::closeEvent(QCloseEvent* aEvent)
 
 void MapForm::initializeGL()
     {
+    // Create the OpenGL map renderer.
+    CartoType::Result error;
+    m_map_renderer = CartoType::CQtMapRenderer::New(error, *m_framework);
+    if (error)
+        m_main_window.ShowError("cannot create map renderer: graphics acceleration not available", error);
+
     // Protect against calls by the QOpenGLWidget constructor in cases where the map could not be opened.
     if (!m_map_renderer)
         return;
 
-    m_map_renderer->Init();
+    SetGraphicsAcceleration(true);
     }
 
 void MapForm::paintGL()
@@ -1956,7 +1955,5 @@ void MapForm::LoadMap(const QString& aFileName)
         if (used_built_in_profiles || m_framework->BuiltInProfileCount() > 0)
             SetRouteProfileIndex(0);
         m_framework->SetViewLimits(1000,0);
-        m_map_renderer = std::make_unique<CartoType::CQtMapRenderer>(*m_framework);
-        m_map_renderer->Init();
         }
     }

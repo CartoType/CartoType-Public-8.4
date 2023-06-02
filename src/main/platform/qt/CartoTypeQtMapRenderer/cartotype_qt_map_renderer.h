@@ -1,7 +1,7 @@
 /*
 cartotype_qt_map_renderer.h
 
-Copyright (C) 2017 CartoType Ltd.
+Copyright (C) 2017-2023 CartoType Ltd.
 See www.cartotype.com for more information.
 */
 
@@ -21,7 +21,6 @@ class CQtMapRenderer
     public:
     CQtMapRenderer(Framework& aFramework);
     static std::unique_ptr<CQtMapRenderer> New(Result& aError,Framework& aFramework);
-    void Init();
     void Draw();
 
     private:

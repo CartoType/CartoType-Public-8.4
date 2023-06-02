@@ -865,6 +865,7 @@ class Framework: public MNavigatorObserver
     std::unique_ptr<CAsyncFinder> iAsyncFinder;
     std::unique_ptr<CAsyncRouter> iAsyncRouter;
     Geometry iPanArea;
+    bool iPanAreaIsWholeMap = false;
     FileLocation iStyleSheetErrorLocation;
     std::unique_ptr<CMapObjectEditor> iMapObjectEditor;
     std::shared_ptr<MUserData> iUserData;
@@ -902,7 +903,7 @@ class MapRenderer
     bool Enable(bool aEnable);
 
     private:
-    std::unique_ptr<CMapRendererImplementation> m_implementation;
+    std::shared_ptr<CMapRendererImplementation> m_implementation;
     };
 
 String UKGridReferenceFromMapPoint(const PointFP& aPointInMapMeters,int32_t aDigits);

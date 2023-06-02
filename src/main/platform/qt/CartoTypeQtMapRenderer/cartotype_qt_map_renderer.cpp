@@ -1,7 +1,7 @@
 /*
 cartotype_qt_map_renderer.cpp
 
-Copyright (C) 2017 CartoType Ltd.
+Copyright (C) 2017-2023 CartoType Ltd.
 See www.cartotype.com for more information.
 */
 
@@ -13,13 +13,15 @@ namespace CartoTypeCore
 
 QOpenGLFunctions TheOpenGLFunctions;
 
-/** Creates an OpenGL ES 2.0 map renderer for use with Qt. */
+/** Creates an OpenGL ES 2.0 map renderer for use with Qt. Call this from QOpenGLWidget::initializeGL. */
 CQtMapRenderer::CQtMapRenderer(Framework& aFramework)
     {
     m_vector_tile_server = CreateOpenGLESVectorTileServer(aFramework);
+    TheOpenGLFunctions.initializeOpenGLFunctions();
+    StartOpenGLESVectorTileServer(*m_vector_tile_server);
     }
 
-/** Creates an OpenGL ES 2.0 map renderer for use with Qt. Returns an error code instead of possibly throwing an exception. */
+/** Creates an OpenGL ES 2.0 map renderer for use with Qt. Returns an error code instead of possibly throwing an exception. Call this from QOpenGLWidget::initializeGL. */
 std::unique_ptr<CQtMapRenderer> CQtMapRenderer::New(Result& aError,Framework& aFramework)
     {
     auto p = std::unique_ptr<CQtMapRenderer>();
@@ -33,13 +35,6 @@ std::unique_ptr<CQtMapRenderer> CQtMapRenderer::New(Result& aError,Framework& aF
         p = nullptr;
         }
     return p;
-    }
-
-/** Initialises the map renderer. Call this from QOpenGLWidget::initializeGL. */
-void CQtMapRenderer::Init()
-    {
-    TheOpenGLFunctions.initializeOpenGLFunctions();
-    StartOpenGLESVectorTileServer(*m_vector_tile_server);
     }
 
 /** Draws the map. Call this from QOpenGLWidget::paintGL. */
